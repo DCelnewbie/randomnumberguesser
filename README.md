@@ -1,4 +1,4 @@
-# randomnumberguesser
+# Random Number Guesser
 Random generator number python game, which the user needs to guess the random number.
 This is one of the simple python projects yet an exciting one. You can even call it a mini-game. It is a program in which the computer randomly chooses a number between 1 to 100, or any range that you would like to. Then give users a hint to guess the number. Every time the user guesses wrong, he gets another clue. The clue is if the computer's number is greater or lower than the person's number.
 
