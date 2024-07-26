@@ -1,16 +1,35 @@
-import random 
-pcNumber = random.randint(0,101)
-while True:
-    personNumber = int(input("chose a number: "))
-    if personNumber < pcNumber:
-        print("the number is greater than", personNumber)
-    elif  personNumber > pcNumber:
-        print("the number is lower than", personNumber)
+import random
+
+def getNumber():
+    return random.randint(1,1001)
+
+def getGuess():
+    return int(input(""))
+
+def game(pcNumber):
+    guess = getGuess()
+    if pcNumber < guess:
+        print(f"The number {guess} is bigger than the number.")
+        game(pcNumber)
+    elif pcNumber > guess:
+        print(f"The number {guess} is lower than the number.")
+        game(pcNumber)
     else:
-        print("congrats, you got it right.")
-        playAgain = input("wanna play again? ")
-        if playAgain == "no":
-            print("okay, thanks for playing.")
-            break
-        else:
-            pcNumber = random.randint(0,101)
+        print(f"You got it right! The number was {guess}")
+
+def getRestart():
+    restart = input("Wanna play again? ")
+    if restart not in ["yes","no"]:
+        print("Huh?")
+        getRestart()
+    elif restart == "yes":
+        main()
+    else:
+        return
+    
+def  main():
+    pcNumber= getNumber()
+    game(pcNumber)
+    getRestart()
+    
+main()
